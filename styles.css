@@ -13,9 +13,9 @@
     --text: #edeae5;
     --text-muted: #9a9790;
     --text-dim: #5e5d58;
-    --accent: #8fa87a;
-    --accent-light: #a4bc8f;
-    --accent-dark: #6d8a5a;
+    --accent: #5b6abf;
+    --accent-light: #7b88d4;
+    --accent-dark: #4a58a8;
     --copper: #c4875a;
     --white: #ffffff;
     --font-display: 'DM Serif Display', Georgia, serif;
@@ -493,7 +493,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .ba-tag-after {
-    background: rgba(109, 138, 90, 0.85);
+    background: rgba(74, 88, 168, 0.85);
     color: var(--white);
 }
 

@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const btn = e.target.querySelector('button[type="submit"]');
         btn.textContent = 'Message Sent!';
-        btn.style.background = '#6d8a5a';
+        btn.style.background = '#4a58a8';
         btn.disabled = true;
         setTimeout(() => {
             btn.textContent = 'Send Request';
