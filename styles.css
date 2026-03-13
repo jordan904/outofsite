@@ -1148,10 +1148,11 @@ a { text-decoration: none; color: inherit; }
     }
 
     .hero {
-        height: 92svh;
+        height: auto;
         min-height: 0;
         align-items: flex-end;
-        padding-bottom: 32px;
+        padding-top: calc(var(--nav-h) + 100px);
+        padding-bottom: 48px;
     }
 
     .hero h1 { font-size: 2.2rem; }
