@@ -260,6 +260,49 @@ a { text-decoration: none; color: inherit; }
     100% { opacity: 1; transform: scaleY(1); }
 }
 
+/* ============================================
+   Trust Marquee Bar
+   ============================================ */
+.trust-bar {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.15rem 0;
+    overflow: hidden;
+}
+
+.marquee {
+    display: flex;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+}
+
+.marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0 2.8rem;
+    white-space: nowrap;
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 500;
+}
+
+.marquee-item .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 /* Buttons */
 .btn {
     display: inline-flex;
