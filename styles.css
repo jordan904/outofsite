@@ -1148,17 +1148,18 @@ a { text-decoration: none; color: inherit; }
     }
 
     .hero {
-        height: 100svh;
-        min-height: 480px;
+        height: auto;
+        min-height: 0;
         align-items: flex-end;
-        padding-bottom: 40px;
+        padding-top: calc(var(--nav-h) + 40px);
+        padding-bottom: 32px;
     }
 
     .hero h1 { font-size: 2.2rem; }
 
-    .hero-badge { margin-bottom: 16px; }
+    .hero-badge { margin-bottom: 14px; }
 
-    .hero-description { margin-bottom: 28px; }
+    .hero-description { margin-bottom: 24px; }
 
     .hero-scroll { display: none; }
 
