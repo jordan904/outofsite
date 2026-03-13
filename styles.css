@@ -286,7 +286,7 @@ a { text-decoration: none; color: inherit; }
     font-size: 0.72rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--text-dim);
+    color: var(--text);
     font-weight: 500;
 }
 
