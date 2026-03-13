@@ -90,6 +90,34 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'ArrowRight') nav(1);
     });
 
+    // --- Testimonials carousel ---
+    const track = document.querySelector('.testimonials-track');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    let carouselIdx = 0;
+
+    function getVisibleCount() {
+        const cardW = cards[0].offsetWidth + 20; // card width + gap
+        return Math.round(track.offsetWidth / cardW);
+    }
+
+    function scrollCarousel() {
+        const cardW = cards[0].offsetWidth + 20;
+        track.scrollTo({ left: carouselIdx * cardW, behavior: 'smooth' });
+    }
+
+    prevBtn.addEventListener('click', () => {
+        carouselIdx = Math.max(0, carouselIdx - 1);
+        scrollCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        const maxIdx = cards.length - getVisibleCount();
+        carouselIdx = Math.min(maxIdx, carouselIdx + 1);
+        scrollCarousel();
+    });
+
     // --- Premium scroll animations ---
     // Slide from left
     document.querySelectorAll('.about-images, .contact-left').forEach(el => el.classList.add('reveal-left'));
