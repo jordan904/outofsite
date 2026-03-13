@@ -740,7 +740,11 @@ a { text-decoration: none; color: inherit; }
     position: relative;
     transition: border-color var(--ease);
     min-width: calc(33.333% - 14px);
+    max-width: calc(33.333% - 14px);
+    height: 260px;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .testimonial-card:hover { border-color: var(--border-light); }
@@ -768,6 +772,11 @@ a { text-decoration: none; color: inherit; }
     color: var(--text-muted);
     font-size: 0.92rem;
     line-height: 1.8;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
 
 /* ============================================
@@ -1130,7 +1139,7 @@ a { text-decoration: none; color: inherit; }
    ============================================ */
 @media (max-width: 1024px) {
     .services-grid,
-    .testimonial-card { min-width: calc(50% - 10px); }
+    .testimonial-card { min-width: calc(50% - 10px); max-width: calc(50% - 10px); }
 
     .gallery-bento {
         grid-template-columns: repeat(2, 1fr);
@@ -1199,7 +1208,7 @@ a { text-decoration: none; color: inherit; }
     .ba-grid { grid-template-columns: 1fr; }
 
     .services-grid,
-    .testimonial-card { min-width: 100%; }
+    .testimonial-card { min-width: 100%; max-width: 100%; height: auto; -webkit-line-clamp: unset; }
     .carousel-btn { width: 36px; height: 36px; }
 
     .gallery-bento {
