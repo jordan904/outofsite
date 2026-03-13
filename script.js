@@ -90,11 +90,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'ArrowRight') nav(1);
     });
 
-    // --- Scroll animations ---
-    const animEls = document.querySelectorAll(
-        '.service-card, .testimonial-card, .gallery-item, .about-images, .about-content, .ba-card, .contact-left, .contact-right'
-    );
-    animEls.forEach(el => el.classList.add('fade-in'));
+    // --- Premium scroll animations ---
+    // Slide from left
+    document.querySelectorAll('.about-images, .contact-left').forEach(el => el.classList.add('reveal-left'));
+    // Slide from right
+    document.querySelectorAll('.about-content, .contact-right').forEach(el => el.classList.add('reveal-right'));
+    // Scale up for cards
+    document.querySelectorAll('.ba-card, .gallery-item').forEach(el => el.classList.add('reveal-scale'));
+    // Stagger children for grids
+    document.querySelectorAll('.services-grid, .testimonials-track').forEach(el => el.classList.add('stagger-children'));
+    // Basic reveal for section intros
+    document.querySelectorAll('.section-intro, .about-highlights, .trust-bar').forEach(el => el.classList.add('reveal'));
+
+    const allAnimated = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children');
 
     const obs = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -103,9 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 obs.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    animEls.forEach(el => obs.observe(el));
+    allAnimated.forEach(el => obs.observe(el));
 
     // --- Smooth scroll ---
     document.querySelectorAll('a[href^="#"]').forEach(a => {
